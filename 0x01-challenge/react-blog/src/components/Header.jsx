@@ -1,23 +1,23 @@
-var React = require('react/addons');
-
-var Navbar = require('react-bootstrap').Navbar;
-var NavBrand = require('react-bootstrap').NavBrand;
-var Link = require('react-router').Link;
+var React = require('react');
+var PropTypes = require('prop-types');
+var { Navbar } = require('react-bootstrap');
+var { Link } = require('react-router');
 
 var Header = React.createClass({
-
     contextTypes: {
-        router: React.PropTypes.func
+        router: PropTypes.object
     },
 
-    render : function() {
+    render: function () {
         return (
             <Navbar>
-                <NavBrand>Link to={`/`}>React Blog</Link></NavBrand>
+                <NavBrand>
+                    <Link to="/">React Blog</Link>
+                </NavBrand>
             </Navbar>
-            
-        )
+        );
     }
 });
 
 module.exports = Header;
+
